@@ -15,6 +15,11 @@ namespace Budgeting.Persistence.Budgets.Configurations
 
                builder.Property(n => n.RowVersion)
                     .IsRowVersion();
+
+               //One to Many Relationship Configuration
+               builder.HasMany(b => b.Elements)
+                    .WithOne(e => e.Budget)
+                    .HasForeignKey(e => e.BudgetId);
           }
      }
 }
