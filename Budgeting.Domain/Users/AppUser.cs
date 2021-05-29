@@ -27,6 +27,8 @@ namespace Budgeting.Domain.Users
 
           public List<DomainEvent> DomainEvents { get; set; } = new List<DomainEvent>();
 
+          // One AppUser to Zero or One Relationship
+          public virtual Setting Setting { get; set; }
 
           // One AppUser to Many Relationship
           public virtual ICollection<Notification> Notifications { get; set; } = new HashSet<Notification>();

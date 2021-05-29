@@ -13,7 +13,12 @@ namespace Budgeting.Persistence.Users.Configurations
                builder.HasKey(a => a.Id);
                builder.Ignore(a => a.DomainEvents);
 
-               
+               // One to One Relationships
+
+               builder.HasOne(a => a.Setting)
+                    .WithOne(s => s.AppUser)
+                    .HasForeignKey<Setting>(s => s.AppUserId);
+
 
                // One to Many Relationships Configurations
 
