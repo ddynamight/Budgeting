@@ -28,6 +28,9 @@ namespace Budgeting.Web
                    .AddEntityFrameworkStores<AppDbContext>();
                */
 
+               //services.AddDatabaseDeveloperPageExceptionFilter();
+               services.AddRazorPages();
+               services.AddHealthChecks();
                services.AddControllersWithViews();
           }
 
